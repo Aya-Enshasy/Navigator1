@@ -3,7 +3,7 @@ import 'package:flutter_app_task3/yourPlace.dart';
 import 'yourPlace.dart';
 
 class City extends StatefulWidget {
-  //const  City({Key? key}) : super(key: key);
+
   var city ;
 
   @override
@@ -73,25 +73,7 @@ class _CityState extends State<City> {
                                   elevation: 4.0,
                                 )
                             )
-                            // child: ElevatedButton(
-                            //     onPressed: (){
-                            //
-                            //       Navigator.push(context, MaterialPageRoute(builder: (context){
-                            //         return YourPlace(city);
-                            //       }
-                            //       )
-                            //       );
-                            //
-                            //     },
-                            //     child: Text('التالي'),
-                            //     style: ElevatedButton.styleFrom(
-                            //
-                            //       primary: Colors.blue,
-                            //       shape: RoundedRectangleBorder(
-                            //           borderRadius: BorderRadius.circular(6)),
-                            //       elevation: 4.0,
-                            //
-                            //     )))
+
                         )
 
 
