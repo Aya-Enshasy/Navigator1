@@ -48,8 +48,9 @@ class YourPlace extends StatelessWidget {
                       labelText: 'ادخل تفاصيل سكنك',
                       hintText: this.place,
                     ),
-                    autofocus: false,
-                  )),
+                  )
+              ),
+
               Container(
                   margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
                   width: 300,
@@ -63,7 +64,7 @@ class YourPlace extends StatelessWidget {
                       },
                       child: Text('التالي'),
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.blue,
+                        primary: Colors.black,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(6)),
                         elevation: 4.0,

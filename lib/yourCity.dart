@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_task3/yourPlace.dart';
+import 'yourPlace.dart';
 
 class City extends StatefulWidget {
-  const  City({Key? key}) : super(key: key);
+  //const  City({Key? key}) : super(key: key);
+  var city ;
 
   @override
   _CityState createState() => _CityState();
@@ -10,6 +12,7 @@ class City extends StatefulWidget {
 
 class _CityState extends State<City> {
   var city;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,20 +22,12 @@ class _CityState extends State<City> {
           centerTitle: true,
           title: Text("العنوان"),
           titleTextStyle: TextStyle(color: Colors.white,fontSize: 18),
-
         ),
-        body: Stack(
-          children: [
-            Center(
-              child: Container(
-                width: double.infinity,
-                padding: EdgeInsets.symmetric(horizontal: 33, vertical: 48),
-
+        body: Container(
+          child: Center(
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
-
                     Column(
                       children: <Widget>[
                         Container(
@@ -48,54 +43,75 @@ class _CityState extends State<City> {
                         Container(
                             width: 300,
                             child: TextField(
-                              onChanged: (inputText){
-                                city = inputText;
+                              onChanged: (value) {
+                                city = value;
                               },
                               decoration: InputDecoration(
                                 border: OutlineInputBorder(),
-                                labelText: this.city,
-                                hintText: 'ادخل اسم مدينتك',
+                                labelText: 'ادخل اسم مدينتك',
+                                hintText: this.city,
                               ),
-                            )),
+                            ),),
+
                         Container(
                             margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
                             width: 300,
                             height: 50,
-                            child: ElevatedButton(
-                                onPressed: (){
+                            child:   ElevatedButton(
+                              onPressed: () {
+                                Navigator.push(context, MaterialPageRoute(builder: (context){
+                                  return YourPlace(city);
+                                }));
 
-                                  Navigator.push(context, MaterialPageRoute(builder: (context){
-                                    return YourPlace(city);
-                                  }
-                                  )
-                                  );
 
-                                },
+                              },
                                 child: Text('التالي'),
                                 style: ElevatedButton.styleFrom(
-
-                                  primary: Colors.blue,
+                                  primary: Colors.black,
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(6)),
                                   elevation: 4.0,
-
-                                )))
+                                )
+                            )
+                            // child: ElevatedButton(
+                            //     onPressed: (){
+                            //
+                            //       Navigator.push(context, MaterialPageRoute(builder: (context){
+                            //         return YourPlace(city);
+                            //       }
+                            //       )
+                            //       );
+                            //
+                            //     },
+                            //     child: Text('التالي'),
+                            //     style: ElevatedButton.styleFrom(
+                            //
+                            //       primary: Colors.blue,
+                            //       shape: RoundedRectangleBorder(
+                            //           borderRadius: BorderRadius.circular(6)),
+                            //       elevation: 4.0,
+                            //
+                            //     )))
+                        )
 
 
 
                       ],
                     )
-
-
-
                   ],
                 ),
-              ),
-            ),
-
-          ],
-        ),
+          )),
       ),
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
